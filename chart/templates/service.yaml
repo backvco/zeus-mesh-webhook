@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zeus-mesh-webhook
+  namespace: zeus-overlay
+  labels:
+    app.kubernetes.io/name: zeus-mesh-webhook
+    app.kubernetes.io/managed-by: zeus
+spec:
+  selector:
+    app.kubernetes.io/name: zeus-mesh-webhook
+  ports:
+    - name: https
+      port: 443
+      targetPort: 8443

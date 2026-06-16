@@ -1,0 +1,6 @@
+apiVersion: v2
+name: zeus-mesh-webhook
+description: Mutating admission webhook — injects Zeus Mesh CA trust into every pod on mesh-enrolled clusters
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

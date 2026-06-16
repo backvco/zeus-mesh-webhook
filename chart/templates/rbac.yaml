@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: zeus-mesh-webhook
+  namespace: zeus-overlay
+  labels:
+    app.kubernetes.io/name: zeus-mesh-webhook
+    app.kubernetes.io/managed-by: zeus

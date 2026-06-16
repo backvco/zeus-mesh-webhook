@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: zeus-mesh-webhook-tls
+  namespace: zeus-overlay
+  labels:
+    app.kubernetes.io/managed-by: zeus
+spec:
+  secretName: zeus-mesh-webhook-tls
+  issuerRef:
+    name: {{ .Values.clusterIssuer }}
+    kind: ClusterIssuer
+  dnsNames:
+    - zeus-mesh-webhook.zeus-overlay.svc
+    - zeus-mesh-webhook.zeus-overlay.svc.cluster.local

@@ -1,0 +1,32 @@
+image:
+  repository: registry.eks-01.app1svc.com/zeus/mesh-webhook
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# Name of the ConfigMap in each namespace containing ca.crt (maintained by Zeus keepalive)
+caConfigMap: zeus-mesh-ca-bundle
+
+# Mount path inside injected pods
+caMountDir: /etc/zeus-mesh-certs
+
+# Namespaces never injected into (always includes kube-system, zeus-overlay internally)
+excludedNamespaces:
+  - kube-system
+  - kube-public
+  - kube-node-lease
+  - cert-manager
+  - zeus-overlay
+  - ingress-nginx
+
+# cert-manager ClusterIssuer to use for webhook TLS cert
+clusterIssuer: zeus-mesh-ca
+
+replicas: 2
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+  limits:
+    cpu: 100m
+    memory: 64Mi
