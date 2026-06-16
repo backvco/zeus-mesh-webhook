@@ -3,7 +3,7 @@ PKG       := ./cmd/webhook
 DIST      := dist
 VERSION   ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
 LDFLAGS   := -s -w -X main.version=$(VERSION)
-IMAGE     := registry.eks-01.app1svc.com/zeus/mesh-webhook
+IMAGE     := ghcr.io/backvco/zeus-mesh-webhook
 
 export CGO_ENABLED := 0
 

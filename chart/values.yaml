@@ -1,5 +1,5 @@
 image:
-  repository: registry.eks-01.app1svc.com/zeus/mesh-webhook
+  repository: ghcr.io/backvco/zeus-mesh-webhook
   tag: latest
   pullPolicy: IfNotPresent
 
