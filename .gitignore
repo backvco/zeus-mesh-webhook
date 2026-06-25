@@ -1,0 +1,5 @@
+# Build artifacts from `go build ./cmd/webhook/` (default output name is the
+# package dir, "webhook") and from the Makefile (BINARY = zeus-mesh-webhook).
+# These are built in CI/Docker from source — never commit them.
+/webhook
+/zeus-mesh-webhook
